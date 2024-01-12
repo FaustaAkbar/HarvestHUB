@@ -29,24 +29,24 @@ Meet the amazing team behind Project HARVESTHUB:
 
 ### Fausta Akbar Wijaya Nur Basuni
 
-![John Doe](team/john_doe.jpg)
+
 
 - **Role:** Hacker
 
 ### Rasendriya Abel Abhista Kristiawan
 
-![Jane Smith](team/jane_smith.jpg)
+
 
 - **Role:** Hipster
 
 ### Andre Aditya Amann
 
-![Bob Johnson](team/bob_johnson.jpg)
+
 
 - **Role:** Hipster
 
 ### Bryant Jonathan Gietosusilo
 
-![Alice Williams](team/alice_williams.jpg)
+
 
 - **Role:** Hustler

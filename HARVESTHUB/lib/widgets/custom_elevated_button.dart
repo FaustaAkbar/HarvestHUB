@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tesssss/core/app_export.dart';
-import 'package:tesssss/widgets/base_button.dart';
+import 'package:harvesthub/core/app_export.dart';
+import 'package:harvesthub/widgets/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
@@ -46,7 +46,7 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height ?? 37.v,
+        height: this.height ?? 22.v,
         width: this.width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
@@ -60,7 +60,8 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle ?? CustomTextStyles.labelLargeOnPrimary,
+                style:
+                    buttonTextStyle ?? CustomTextStyles.labelLargeWhiteA70001,
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

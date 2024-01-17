@@ -1,4 +1,4 @@
-name: tesssss
+name: harvesthub
 description: A new Flutter project.
 version: 1.0.0+1
 environment: 
@@ -8,6 +8,8 @@ dependencies:
     sdk: flutter
   cached_network_image: ^3.3.0
   flutter_svg: ^2.0.9
+  flutter_rating_bar: ^4.0.1
+  google_maps_flutter: ^2.5.0
   intl: ^0.18.0
 dev_dependencies: 
   flutter_test: 
@@ -22,3 +24,19 @@ flutter:
       fonts: 
         - asset: assets/fonts/ReadexProMedium.ttf
           weight: 500
+        - asset: assets/fonts/ReadexProLight.ttf
+          weight: 300
+        - asset: assets/fonts/ReadexProExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/ReadexProBold.ttf
+          weight: 700
+        - asset: assets/fonts/ReadexProRegular.ttf
+          weight: 400
+    - family: Staatliches
+      fonts: 
+        - asset: assets/fonts/StaatlichesRegular.ttf
+          weight: 400
+    - family: Nunito Sans
+      fonts: 
+        - asset: assets/fonts/NunitoSansBold.ttf
+          weight: 700

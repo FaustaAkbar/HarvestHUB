@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tesssss/core/app_export.dart';
-import 'package:tesssss/widgets/custom_elevated_button.dart';
-import 'package:tesssss/widgets/custom_icon_button.dart';
-import 'package:tesssss/widgets/custom_text_form_field.dart';
+import 'package:harvesthub/core/app_export.dart';
+import 'package:harvesthub/widgets/custom_elevated_button.dart';
+import 'package:harvesthub/widgets/custom_icon_button.dart';
+import 'package:harvesthub/widgets/custom_text_form_field.dart';
 
 class LoginPageScreen extends StatelessWidget {
   LoginPageScreen({Key? key})
@@ -10,11 +10,11 @@ class LoginPageScreen extends StatelessWidget {
           key: key,
         );
 
-  TextEditingController passwordFieldController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  TextEditingController roleFieldController = TextEditingController();
+  TextEditingController roleController = TextEditingController();
 
-  TextEditingController userNameFieldController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -22,6 +22,7 @@ class LoginPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: appTheme.whiteA70001,
         resizeToAvoidBottomInset: false,
         body: Form(
           key: _formKey,
@@ -29,25 +30,25 @@ class LoginPageScreen extends StatelessWidget {
             width: double.maxFinite,
             child: SingleChildScrollView(
               child: SizedBox(
-                height: SizeUtils.height,
+                height: 950.v,
                 width: double.maxFinite,
                 child: Stack(
                   alignment: Alignment.topCenter,
                   children: [
                     CustomImageView(
                       imagePath: ImageConstant.imgPngtreeScribbl,
-                      height: 356.v,
+                      height: 335.v,
                       width: 360.h,
                       alignment: Alignment.topCenter,
                     ),
                     Align(
                       alignment: Alignment.topCenter,
                       child: Container(
-                        height: 159.v,
+                        height: 147.v,
                         width: double.maxFinite,
                         margin: EdgeInsets.only(top: 240.v),
                         decoration: BoxDecoration(
-                          color: theme.colorScheme.primary,
+                          color: appTheme.green900,
                           borderRadius: BorderRadius.circular(
                             18.h,
                           ),
@@ -57,50 +58,96 @@ class LoginPageScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.h,
-                          vertical: 186.v,
-                        ),
-                        decoration: BoxDecoration(
+                        padding: EdgeInsets.fromLTRB(51.h, 100.v, 51.h, 186.v),
+                        decoration: AppDecoration.fillGreen.copyWith(
                           borderRadius: BorderRadiusStyle.roundedBorder16,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            _buildPasswordField(context),
+                            _buildUserName(context),
                             SizedBox(height: 17.v),
-                            _buildRoleField(context),
-                            SizedBox(height: 75.v),
-                            _buildLoginRow(context),
-                            SizedBox(height: 6.v),
-                            Text(
-                              "Don’t have an account? Register here",
-                              style: theme.textTheme.labelMedium,
+                            _buildPassword(context),
+                            SizedBox(height: 17.v),
+                            _buildRole(context),
+                            SizedBox(height: 86.v),
+                            Padding(
+                              padding: EdgeInsets.only(left: 6.h),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  _buildLOGIN(context),
+                                  SizedBox(
+                                    height: 37.v,
+                                    width: 52.h,
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        CustomIconButton(
+                                          height: 37.v,
+                                          width: 42.h,
+                                          alignment: Alignment.center,
+                                          child: CustomImageView(),
+                                        ),
+                                        CustomImageView(
+                                          imagePath:
+                                              ImageConstant.imgFingerprint,
+                                          height: 33.v,
+                                          width: 52.h,
+                                          alignment: Alignment.center,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            SizedBox(height: 6.v),
+                            SizedBox(height: 15.v),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Don’t have an account?",
+                                    style: CustomTextStyles.bodySmallff00000010,
+                                  ),
+                                  TextSpan(
+                                    text: " ",
+                                  ),
+                                  TextSpan(
+                                    text: "Register here",
+                                    style: CustomTextStyles.labelMediumff000000
+                                        .copyWith(
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                            SizedBox(height: 15.v),
                           ],
                         ),
                       ),
                     ),
                     CustomImageView(
                       imagePath: ImageConstant.imgRectangle10,
-                      height: 145.v,
-                      width: 360.h,
+                      height: 126.v,
                       radius: BorderRadius.circular(
                         18.h,
                       ),
                       alignment: Alignment.center,
+                      margin: EdgeInsets.only(bottom: 125.v),
                     ),
-                    _buildLoginText(context),
+                    _buildFortySix(context),
                     CustomImageView(
                       imagePath: ImageConstant.imgRectangle9,
-                      height: 164.v,
+                      height: 160.v,
                       width: 360.h,
                       radius: BorderRadius.circular(
                         18.h,
                       ),
                       alignment: Alignment.topCenter,
-                      margin: EdgeInsets.only(top: 101.v),
+                      margin: EdgeInsets.only(top: 150.v),
                     ),
                     CustomImageView(
                       imagePath: ImageConstant.imgHarvesthub,
@@ -109,7 +156,6 @@ class LoginPageScreen extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       margin: EdgeInsets.only(top: 225.v),
                     ),
-                    _buildUserNameField(context),
                   ],
                 ),
               ),
@@ -121,11 +167,11 @@ class LoginPageScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildPasswordField(BuildContext context) {
+  Widget _buildPassword(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 41.h),
+      padding: EdgeInsets.symmetric(horizontal: 6.h),
       child: CustomTextFormField(
-        controller: passwordFieldController,
+        controller: passwordController,
         hintText: "Password",
         textInputType: TextInputType.visiblePassword,
         suffix: Container(
@@ -150,70 +196,32 @@ class LoginPageScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildRoleField(BuildContext context) {
+  Widget _buildRole(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 41.h),
+      padding: EdgeInsets.symmetric(horizontal: 6.h),
       child: CustomTextFormField(
-        controller: roleFieldController,
+        controller: roleController,
         hintText: "Role",
-        textInputType: TextInputType.visiblePassword,
-        obscureText: true,
       ),
     );
   }
 
   /// Section Widget
-  Widget _buildLoginButton(BuildContext context) {
+  Widget _buildLOGIN(BuildContext context) {
     return Expanded(
       child: CustomElevatedButton(
+        height: 37.v,
         text: "LOGIN",
-        margin: EdgeInsets.only(
-          top: 11.v,
-          bottom: 9.v,
-        ),
+        onPressed: () {
+          onTapGetStarted(context);
+        },
+        buttonStyle: CustomButtonStyles.fillGreen,
       ),
     );
   }
 
   /// Section Widget
-  Widget _buildLoginRow(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Padding(
-        padding: EdgeInsets.only(right: 14.h),
-        child: Row(
-          children: [
-            _buildLoginButton(context),
-            Container(
-              height: 57.v,
-              width: 42.h,
-              margin: EdgeInsets.only(left: 26.h),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  CustomIconButton(
-                    height: 37.v,
-                    width: 42.h,
-                    alignment: Alignment.center,
-                    child: CustomImageView(),
-                  ),
-                  CustomImageView(
-                    imagePath: ImageConstant.imgFingerprint,
-                    height: 57.v,
-                    width: 29.h,
-                    alignment: Alignment.center,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Section Widget
-  Widget _buildLoginText(BuildContext context) {
+  Widget _buildFortySix(BuildContext context) {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
@@ -226,7 +234,7 @@ class LoginPageScreen extends StatelessWidget {
           borderRadius: BorderRadiusStyle.roundedBorder16,
           image: DecorationImage(
             image: AssetImage(
-              ImageConstant.imgGroup6,
+              ImageConstant.imgGroup46,
             ),
             fit: BoxFit.cover,
           ),
@@ -247,16 +255,20 @@ class LoginPageScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildUserNameField(BuildContext context) {
+  Widget _buildUserName(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 307.v),
+      padding: EdgeInsets.symmetric(horizontal: 6.h),
       child: CustomTextFormField(
         width: 246.h,
-        controller: userNameFieldController,
+        controller: userNameController,
         hintText: "Username",
         textInputAction: TextInputAction.done,
         alignment: Alignment.bottomCenter,
       ),
     );
   }
+}
+
+onTapGetStarted(BuildContext context) {
+  Navigator.pushNamed(context, AppRoutes.homepageScreen);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tesssss/core/app_export.dart';
+import 'package:harvesthub/core/app_export.dart';
 
 class CustomIconButton extends StatelessWidget {
   CustomIconButton({
@@ -48,7 +48,11 @@ class CustomIconButton extends StatelessWidget {
             height: height ?? 0,
             width: width ?? 0,
             padding: padding ?? EdgeInsets.zero,
-            decoration: decoration,
+            decoration: decoration ??
+                BoxDecoration(
+                  color: appTheme.gray800,
+                  borderRadius: BorderRadius.circular(15.h),
+                ),
             child: child,
           ),
           onPressed: onTap,

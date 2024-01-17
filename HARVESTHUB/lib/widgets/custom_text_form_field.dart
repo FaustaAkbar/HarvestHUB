@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tesssss/core/app_export.dart';
+import 'package:harvesthub/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
@@ -92,7 +92,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.labelLarge,
+          style: textStyle ?? CustomTextStyles.labelLargeGray700,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -103,7 +103,7 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? theme.textTheme.labelLarge,
+        hintStyle: hintStyle ?? CustomTextStyles.bodySmallBlack900,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -127,5 +127,13 @@ class CustomTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(15.h),
               borderSide: BorderSide.none,
             ),
+      );
+}
+
+/// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
+extension TextFormFieldStyleHelper on CustomTextFormField {
+  static OutlineInputBorder get fillGreen => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6.h),
+        borderSide: BorderSide.none,
       );
 }

@@ -1,4 +1,4 @@
-package com.tesssss.app
+package com.harvesthub.app
 
 import io.flutter.embedding.android.FlutterActivity
 

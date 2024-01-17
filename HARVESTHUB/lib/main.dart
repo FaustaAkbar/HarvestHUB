@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: theme,
-          title: 'tesssss',
+          title: 'harvesthub',
           debugShowCheckedModeBanner: false,
           initialRoute: AppRoutes.loginPageScreen,
           routes: AppRoutes.routes,

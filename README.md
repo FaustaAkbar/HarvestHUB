@@ -10,19 +10,19 @@ Project HARVESTHUB is an innovative platform designed to streamline the process 
 
 1. **🔑 Login**  
    Secure access to your account with a user-friendly login interface.  
-   <img src="screenshots/login.png" alt="Feature 1: Login" width="100"/>
+   <img src="src/login.png" alt="Feature 1: Login" width="100"/>
 
 2. **🔍 Find Product**  
    Effortlessly search for products using various filters to meet your needs.  
-   <img src="screenshots/findproduct.png" alt="Feature 2: Find Product" width="100"/>
+   <img src="src/findproduct.png" alt="Feature 2: Find Product" width="100"/>
 
 3. **💬 Chat**  
    Communicate directly with vendors through an integrated chat feature for instant support.  
-   <img src="screenshots/chat.png" alt="Feature 3: Chat" width="100"/>
+   <img src="src/chat.png" alt="Feature 3: Chat" width="100"/>
 
 4. **🛒 Order Product**  
    Seamlessly place orders and track their status with our intuitive ordering system.  
-   <img src="screenshots/orderproduct.png" alt="Feature 4: Order Product" width="100"/>
+   <img src="src/orderproduct.png" alt="Feature 4: Order Product" width="100"/>
 
 ## 👥 Team
 

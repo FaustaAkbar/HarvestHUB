@@ -4,9 +4,8 @@
 
 Project HARVESTHUB is an innovative platform designed to streamline the process of **product discovery**, **ordering**, and **communication** between users and vendors. This repository contains the source code and comprehensive documentation to guide you through its features and functionalities.
 
-## 📸 Screenshots
 
-### 🛠 Features
+## 🛠 Features
 
 1. **🔑 Login**  
    Secure access to your account with a user-friendly login interface.  
